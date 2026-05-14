@@ -1,0 +1,17 @@
+Analyze whether this issue is caused by downstream dependency failure.
+
+Check:
+- Guidewire/PAS/BASE/downstream APIs
+- timeout behaviour
+- retry behaviour
+- error mapping
+- fallback logic
+- response transformation
+- partial failures
+
+Provide:
+1. actual failing downstream
+2. evidence
+3. current handling
+4. expected handling
+5. fix recommendation
