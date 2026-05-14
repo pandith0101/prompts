@@ -1,0 +1,12 @@
+Analyze production impact of this proposed fix.
+
+Provide:
+1. impacted services
+2. impacted APIs
+3. impacted downstream systems
+4. regression risk
+5. performance risk
+6. backward compatibility risk
+7. deployment risk
+8. rollback considerations
+9. validation checklist after deployment
