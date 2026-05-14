@@ -1,0 +1,21 @@
+Use Playwright MCP to reproduce this issue.
+
+Validate:
+1. exact UI flow
+2. browser/network errors
+3. failed API calls
+4. console errors
+5. incorrect UI behaviour
+6. validation issues
+7. broken navigation/state issues
+
+Capture:
+- screenshots if useful
+- failed request details
+- impacted API endpoints
+- reproduction steps
+
+Then provide:
+- probable root cause
+- fix area
+- impacted repo/component
