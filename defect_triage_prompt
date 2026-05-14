@@ -10,6 +10,26 @@ Separate:
 - assumptions
 - missing evidence
 
+Explain:
+- previous working behaviour
+- what changed
+- why current behaviour broke
+
+For every suggested fix file:
+explain why this file is the correct fix location.
+
+
+For root cause provide:
+- confidence level (High/Medium/Low)
+- missing evidence if confidence is not high
+
+Every conclusion must include supporting evidence.
+
+
+
+
+---------------------------------------------------------------------
+
 use chromium browser to access the jira
 Defect:
 [PASTE JIRA/DEFECT]
