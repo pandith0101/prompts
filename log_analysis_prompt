@@ -1,0 +1,17 @@
+Analyze these logs and identify:
+
+1. probable root cause
+2. exact failure point
+3. request flow
+4. downstream failure if any
+5. validation failure if any
+6. timeout/retry issue if any
+7. impacted API/service
+8. possible fix location
+9. suspicious patterns
+10. production impact
+
+Logs:
+[PASTE LOGS]
+
+Keep explanation simple and actionable.
