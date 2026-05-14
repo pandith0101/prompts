@@ -1,0 +1,247 @@
+------------------------------------- 1
+You are analyzing a Jira feature.
+
+Do NOT generate documentation yet.
+Do NOT generate summaries yet.
+Do NOT create Word/PDF yet.
+
+Goal:
+Understand the feature completely.
+
+Tasks:
+1. Read the Jira ticket completely
+2. Read acceptance criteria
+3. Read linked comments if important
+4. Identify all scenarios
+5. Identify impacted APIs
+6. Identify impacted request/response fields
+7. Identify downstream systems involved
+8. Identify which repositories contain implementation
+9. Identify which services own the business logic
+10. Identify feature flags/config changes if any
+
+Return ONLY these sections:
+
+1. Feature Purpose
+2. Existing Behaviour
+3. New Behaviour
+4. Impacted APIs
+5. Impacted Services
+6. Downstream Systems
+7. Request Changes
+8. Response Changes
+9. Validation Changes
+10. Possible Error Scenarios
+11. Open Questions
+12. List of Impacted Files
+13. List of Important Classes
+14. List of Important Scenarios
+
+IMPORTANT:
+- keep response concise
+- do not explain code deeply
+- do not create large tables yet
+- do not generate documentation yet
+- do not repeat Jira text blindly
+
+Jira:
+[PASTE JIRA]
+
+Repos:
+[PASTE REPOS]
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+------------------------------------------------- 2
+
+Using the previous analysis:
+
+Create a detailed BEFORE vs AFTER feature analysis.
+
+Goal:
+Understand business behaviour changes clearly.
+
+For EVERY acceptance criteria explain:
+
+- what existed before
+- what problem existed
+- what changes now
+- why this change is needed
+- expected behaviour after implementation
+- what QA should validate
+- possible risks
+
+Create this table:
+
+| Acceptance Criteria | Existing Behaviour | New Behaviour | Why Needed | Expected Result | Validation Needed | Risks |
+|---|---|---|---|---|---|---|
+
+Rules:
+- use simple language
+- focus on feature behaviour
+- avoid code-level explanations
+- avoid generic statements
+- explain actual flow changes
+- explain downstream impact if applicable
+
+Do NOT generate document yet.
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+---------------------------------------------3 $ 4
+
+Create minimum 5 realistic business examples for each Acceptance Criteria only.
+
+Do NOT include scenario examples yet.
+
+Focus on:
+- business flow
+- before vs after
+- expected behaviour
+- validations
+- expected errors
+- downstream impacts
+
+Use detailed tables.
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+
+
+
+Create minimum 5 realistic examples for each Scenario only.
+
+Focus on:
+- production behaviour
+- expected result
+- failure handling
+- timeout handling
+- downstream behaviour
+- retry behaviour
+- validation behaviour
+
+Use detailed tables.
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+
+---------------------------------- 5
+
+Now create a dedicated error analysis.
+
+Goal:
+Understand all expected failures and behaviour changes.
+
+Create this table:
+
+| Error Scenario | Trigger | Existing Behaviour | New Behaviour | Expected Response | Validation Needed | Business Impact |
+|---|---|---|---|---|---|---|
+
+Include:
+- validation failures
+- missing data
+- invalid requests
+- downstream failures
+- downstream timeout
+- retry failures
+- partial failures
+- unexpected exceptions
+- backward compatibility risks
+
+IMPORTANT:
+- explain clearly
+- focus on behaviour
+- focus on user/system impact
+- avoid code explanations
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+
+------------------------------------------- 6
+
+Now analyze feature dependencies.
+
+Explain:
+- which application calls this feature
+- which API handles the feature
+- which downstream systems are called
+- which teams may be impacted
+- which services depend on this feature
+- where failures can occur
+- which downstream systems are critical
+
+Create:
+1. dependency explanation
+
+2)pie chart if appliccablr or table with full details of api's and teams dependent
+
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+
+----------------------------------------------------
+
+
+---
+
+# PROMPT 6 — QA & TESTING SCOPE
+
+```text id="x4vhd8"
+Now create detailed QA/testing scope.
+
+Include:
+- positive testing
+- negative testing
+- validation testing
+- regression impact
+- downstream validation
+- timeout validation
+- backward compatibility testing
+- request/response validation
+- UI validation if applicable
+- data validation
+- production validation
+
+Create detailed testing checklist tables.
+
+Focus on:
+- what QA should validate
+- what support teams should monitor
+- what production risks exist
+
+
+Store this analysis context for the next step.
+Do not repeat previous sections unnecessarily.
+
+-------------------------------------------
+
+Using ONLY the previous analysis already created:
+
+Generate the final Word document or HTML document or pdf document
+
+IMPORTANT:
+- do not re-analyze repos
+- do not re-read Jira
+- do not perform fresh analysis
+- only organize existing analysis
+
+Document sections:
+1. Feature Overview
+2. Existing vs New Behaviour
+3. Acceptance Criteria Analysis
+4. Scenario Analysis
+5. Error Analysis
+6. Dependency Analysis
+7. QA Testing Scope
+8. Risks & Open Questions
+9. Final Summary
+
+Rules:
+- professional formatting
+- proper headings
+- proper tables
+- simple wording
+- detailed explanations
+- avoid repetition
+
+
