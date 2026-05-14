@@ -1,0 +1,177 @@
+1. ALWAYS PROVIDE THESE 5 THINGS
+Before prompting Claude, give:
+1. Exact error message
+2. API/UI flow
+3. Environment
+4. Expected behaviour
+5. Approximate failing timeframe or recent release
+Example:
+Error:
+504 timeout while creating quote
+
+Flow:
+Auto Launcher -> Quote Creation -> PAS
+
+Env:
+ARCINT
+
+Expected:
+Quote should create successfully
+
+Recent Change:
+After Caramel deployment
+This improves RCA quality massively.
+2. FORCE CLAUDE TO SEPARATE FACTS VS ASSUMPTIONS
+Add this line to every RCA prompt:
+Separate:
+- confirmed findings
+- probable causes
+- assumptions
+- missing evidence
+This reduces hallucinations a LOT.
+3. ASK FOR FAILURE POINT FIRST
+Instead of:
+“find root cause”
+Ask:
+
+Identify the exact failure point first before concluding root cause.
+Huge difference.
+Claude otherwise jumps to conclusions.
+
+4. ALWAYS ASK FOR FLOW TRACE
+Add:
+Trace the complete flow from request to failure point.
+This is critical in enterprise systems.
+Without flow tracing:
+
+shallow RCA
+wrong repo
+incorrect fix suggestion
+5. ASK FOR “WHY NOW?”
+Very important for regressions.
+Add:
+
+Identify why this issue started happening now.
+Check:
+- recent MRs
+- validation changes
+- config changes
+- feature flags
+- downstream contract changes
+This catches most enterprise defects.
+6. FORCE MINIMAL FIX APPROACH
+Add:
+Prefer smallest safe fix with lowest regression risk.
+Otherwise Claude suggests large refactors.
+7. ASK FOR EXACT SEARCH STRATEGY
+This is a HUGE improvement.
+Add:
+
+First identify:
+- relevant repo
+- relevant API/service
+- relevant keywords/classes
+- probable failure area
+
+Then investigate deeply.
+This improves GitLab MCP searches massively.
+8. USE ITERATIVE INVESTIGATION
+Best workflow:
+Prompt 1
+Discovery
+Prompt 2
+Flow trace
+Prompt 3
+RCA
+Prompt 4
+Fix recommendation
+Prompt 5
+Test impact
+Instead of giant prompt.
+
+This alone improves results 3–5x.
+
+9. ASK FOR “WHAT EXISTED BEFORE?”
+This is one of the BEST additions.
+Add:
+
+Explain:
+- previous working behaviour
+- what changed
+- why current behaviour broke
+This catches regression logic.
+10. ASK FOR “WHY THIS FILE?”
+Otherwise Claude gives random files.
+Add:
+
+For every suggested fix file:
+explain why this file is the correct fix location.
+11. ASK FOR CONFIDENCE LEVEL
+Very useful.
+For root cause provide:
+- confidence level (High/Medium/Low)
+- missing evidence if confidence is not high
+This helps you trust results.
+12. FORCE EVIDENCE
+One of the best additions:
+Every conclusion must include supporting evidence.
+13. ASK FOR “WHAT SHOULD NOT BE CHANGED”
+Extremely useful.
+Identify:
+- unaffected flows
+- code areas that should not be modified
+- high regression-risk areas
+Senior engineers do this constantly.
+14. IMPROVE PLAYWRIGHT USAGE
+Instead of:
+“use playwright”
+Say:
+
+Use Playwright only to:
+- reproduce issue
+- inspect failed network calls
+- inspect console errors
+- validate UI behaviour
+- capture evidence
+
+Do not use Playwright for backend assumptions.
+Much better results.
+15. ASK FOR SEARCH KEYWORDS
+Very useful for GitLab MCP.
+Suggest:
+- keywords
+- APIs
+- classes
+- methods
+- DTOs
+- configs
+
+that should be searched in GitLab.
+Helps a lot when issue is unclear.
+16. YOUR MOST IMPORTANT IMPROVEMENT
+Create your own STANDARD triage template.
+Every defect should follow:
+
+1. Issue Summary
+2. Failure Point
+3. Flow Trace
+4. Root Cause
+5. Evidence
+6. Fix Location
+7. Minimal Safe Fix
+8. Test Impact
+9. Risks
+10. Open Questions
+If you consistently use this structure:
+Claude outputs become much better
+your triage quality improves
+easier Jira updates
+easier developer handoff
+easier CR discussions
+17. KEEP PROMPTS SHORT
+Claude performs BETTER with:
+smaller prompts
+clearer goals
+iterative investigation
+NOT giant mega prompts.
+Short + iterative = best results.
