@@ -1,71 +1,16 @@
-First identify the affected repo, files, and probable failure point only. Do not provide final fix yet.
 
   Act as a senior triage lead.
-
-Analyze this defect using GitLab MCP and Playwright MCP only if UI validation is needed.
-
-Defect:
-[PASTE DEFECT DETAILS / JIRA LINK]
-
-Repos to check:
-- [REPO 1]
-- [REPO 2]
-
-Return only this format:
-
-1. Root Cause
-- What exactly is failing?
-- Why is it failing?
-- Is it code/config/data/UI/downstream issue?
-
-2. Plain Language Summary
-Explain the issue in simple words, 3-5 lines.
-
-3. Repo/File Fix Location
-Create this table:
-
-| Repo | File | Line Number | Why This File Needs Change |
-|---|---|---|---|
-
-4. Current Code vs Required Change
-
-| File | Current Code/Logic | Required Change | Reason |
-|---|---|---|---|
-
-5. Test Cases
-
-| Test Case | Current Behaviour | Expected Behaviour After Fix | What Test Needs To Change/Add |
-|---|---|---|---|
-
-Include:
-- reported defect scenario
-- happy path
-- negative scenario
-- regression scenario
-- downstream/error scenario if applicable
-
-6. Edge Cases and Risks
-
-| Edge Case/Risk | Impact | How To Validate |
-|---|---|---|
-
-Rules:
-- Do not give generic answers.
-- Do not assume root cause.
-- Give evidence from GitLab files and line numbers.
-- If root cause is not confirmed, say “Possible root cause” and explain what evidence is missing.
-- Keep explanation simple and direct.
-
-  --------------------------------------
-
-
-
-
-  Act as a senior triage lead.
-
+Identify the exact failure point first before concluding root cause.
+Trace the complete flow from request to failure point.
 Analyze this defect using GitLab MCP.
-Use Playwright MCP only if UI validation is needed.
 
+Separate:
+- confirmed findings
+- probable causes
+- assumptions
+- missing evidence
+
+use chromium browser to access the jira
 Defect:
 [PASTE JIRA/DEFECT]
 
@@ -96,7 +41,7 @@ Include:
 - logs/errors/request-response if available
 - related MR/commit if found
 
-4. Required Fix
+4. Required Fix(Prefer smallest and perfect  safe fix with lowest regression risk and following the current coding standards)
 
 | File | Current Logic | Required Change | Reason |
 |---|---|---|---|
