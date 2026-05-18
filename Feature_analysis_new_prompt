@@ -1,0 +1,86 @@
+Prompt 1 — Initial Analysis ONLY
+
+
+Analyze this Jira feature using GitLab MCP.
+
+Find:
+1. Feature purpose
+2. Existing behavior
+3. New behavior
+4. Impacted APIs
+5. Impacted services
+6. Primary impacted repos/files
+7. Request/response changes
+8. Important validations
+
+Keep response concise.
+Do not generate scenarios or documentation.
+
+---------------------------
+
+Prompt 2 — Acceptance Criteria ONLY
+
+
+Using the previous analysis only:
+
+Create BEFORE vs AFTER analysis for each acceptance criteria.
+
+Include:
+- existing behavior
+- new behavior
+- why needed
+- expected result
+- validation needed
+- risks
+
+-------------------------------------
+Prompt 3 — Error Analysis ONLY
+
+Analyze only error scenarios.
+
+Include:
+- validation failures
+- downstream failures
+- timeout scenarios
+- partial failures
+- retry behavior
+
+Keep concise.
+Focus on behavior impact only.
+
+--------------------------------------
+Prompt 4 — Dependency Analysis ONLY
+
+
+Analyze only dependencies.
+
+Find:
+- upstream applications
+- downstream systems
+- impacted teams
+- critical services
+- possible failure points
+
+Keep concise.
+No diagrams.
+
+---------------------------------------
+
+Generate QA scope only.
+
+Include:
+- positive tests
+- negative tests
+- regression areas
+- timeout testing
+- response validation
+- backward compatibility testing
+
+Keep concise.
+
+--------------------------
+
+
+
+Keep concise.
+No deep code explanation.
